@@ -31,6 +31,8 @@ namespace HMS.Service
                                   ,[BankAddress]
                                   ,[CodeImage]
                                   ,[CodeNumber]
+                                  ,[SelectedState]
+                                  ,[SelectedCity]
                               FROM [dbo].[Admin]";
         string insertQuery = @"INSERT INTO [dbo].[Admin]
                                    ([IsActive]
@@ -53,7 +55,9 @@ namespace HMS.Service
                                    ,[TermAndCondition]
                                    ,[BankAddress]
                                    ,[CodeImage]
-                                   ,[CodeNumber])
+                                   ,[CodeNumber]
+                                   ,[SelectedState]
+                                   ,[SelectedCity])
                              VALUES
                                    (@IsActive 
                                    ,@CreatedOn
@@ -75,7 +79,9 @@ namespace HMS.Service
                                    ,@TermAndCondition
                                    ,@BankAddress
                                    ,@CodeImage
-                                   ,@CodeNumber)";
+                                   ,@CodeNumber
+                                   ,@SelectedState
+                                   ,@SelectedCity)";
         string updateQuery = @"UPDATE [dbo].[Admin]
                            SET [IsActive] =@IsActive
                               ,[CreatedOn] =@CreatedOn
@@ -98,6 +104,8 @@ namespace HMS.Service
                               ,[BankAddress] =@BankAddress
                               ,[CodeImage] =@CodeImage
                               ,[CodeNumber] =@CodeNumber
+                              ,[SelectedState]=@SelectedState
+                              ,[SelectedCity]=@SelectedCity
                          WHERE Id=@Id";
         string deleteQuery = "";
         public void Add(IModel model)
